@@ -19,7 +19,7 @@ Here's where this happens:
 
 https://github.com/octobercms/october/blob/master/modules/backend/behaviors/RelationController.php#L897
 
-Thanks to alxy and jraw in the IRC channel for helping me suss through this and try some things. I'd love to ge this fixed, and am happy to work on it myself with some guidance from the core team.
+Thanks to alxy and jraw in the IRC channel for helping me suss through this and try some things. I'd love to get this fixed, and am happy to work on it myself with some guidance from the core team.
 
 # Test Plugin
 
