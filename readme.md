@@ -1,3 +1,26 @@
+# Fork to Demo Bug
+
+In a nutshell, the relation manager / relation controller in the backend forms doesn't work with belongsTo relationships. When saving the dependant (slave) record, the master record is also saved whether or not it has already been created. This results in the creation of two master records, one that's blank except for the relation to the slave, and one that contains the save fields.
+
+## Steps to Reproduce (well, in one sense of the word, not in the other)
+
+1. Install this plugin (`git clone git@github.com:lthurston/oc-test-plugin.git plugins/october/test`)
+2. In the backend, click Playground
+3. In the side nav, click People
+4. Click Manage Phones
+5. Click + New Phone
+6. Under "Alternate Views" click "Relation Controller"
+7. Click "Create Person"
+8. Add a name to the new person and save
+9. Add a name to the phone and save
+10. Check your october_test_phones table and note the creation of two records. Note the differences between the records.
+
+Here's where this happens:
+
+https://github.com/octobercms/october/blob/master/modules/backend/behaviors/RelationController.php#L897
+
+Thanks to alxy and jraw in the IRC channel for helping me suss through this and try some things. I'd love to ge this fixed, and am happy to work on it myself with some guidance from the core team.
+
 # Test Plugin
 
 This is a UI test plugin for OctoberCMS. Extract this archive to `/plugins/october/test` and click on **Playground** in the back-end area.
