@@ -1,6 +1,12 @@
 # Fork to Demo Bug
 
-In a nutshell, the relation manager / relation controller in the backend forms doesn't work with belongsTo relationships. When saving the dependant (slave) record, the master record is also saved whether or not it has already been created. This results in the creation of two master records, one that's blank except for the relation to the slave, and one that contains the save fields.
+In a nutshell, the relation manager / relation controller in the backend forms doesn't work with belongsTo relationships (see issue: https://github.com/octobercms/october/issues/1329). When saving the dependant (slave) record, the master record is also saved whether or not it has already been created. This results in the creation of two master records, one that's blank except for the relation to the slave, and one that contains the save fields.
+
+## Pull Requests
+
+I've created two pull requests (https://github.com/octobercms/october/pull/1330 and https://github.com/octobercms/library/pull/125) which enable deferred binding for belongsTo relationships. If you think this is a weird idea, you're very astute, but probably haven't read the issue and its first comment yet which explains why this is one of a couple possible solutions.
+
+If you merge these small changes into your own code base, the follow steps will yield a successful test. If you leave them out, you will experience the current bug.
 
 ## Steps to Reproduce (well, in one sense of the word, not in the other)
 
@@ -20,6 +26,7 @@ Here's where this happens:
 https://github.com/octobercms/october/blob/master/modules/backend/behaviors/RelationController.php#L897
 
 Thanks to alxy and jraw in the IRC channel for helping me suss through this and try some things. I'd love to get this fixed, and am happy to work on it myself with some guidance from the core team.
+
 
 # Test Plugin
 
