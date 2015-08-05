@@ -86,3 +86,9 @@ tabs:
             type: datepicker
             mode: time
             tab: Birthday
+
+        photo:
+            label: Photo
+            type: fileupload
+            mode: image
+            tab: Media

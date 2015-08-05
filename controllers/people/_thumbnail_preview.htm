@@ -1,0 +1,7 @@
+<br />
+<?php xdebug_Break(); ?>
+<?php if($model->photo): ?>
+<img src="<?= $model->photo->getThumb(400, "auto") ?>" />
+<?php else: ?>
+<p><strong>No image has been uploaded.</strong></p>
+<?php endif ?>

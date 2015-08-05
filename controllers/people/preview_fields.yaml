@@ -1,0 +1,18 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+#
+#  These fields explore the use of context; the "phone" field is rendered in
+#  different ways depending on the context used by the form, passed in by
+#  the URL.
+# ===================================
+
+fields:
+    name:
+        label: Name
+        commentAbove: Text field, required.
+
+    photo:
+        label: Photo
+        type: partial
+        path: $/october/test/controllers/people/_thumbnail_preview.htm

@@ -40,4 +40,10 @@ class Person extends Model
         'alt_phone' => ['October\Test\Models\Phone', 'key' => 'person_id']
     ];
 
+    /**
+     * @var array
+     */
+    public $attachOne = [
+        'photo' => 'System\Models\File'
+    ];
 }
